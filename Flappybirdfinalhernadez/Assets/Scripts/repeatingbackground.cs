@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class repeatingbackground : MonoBehaviour {
+public class Repeatingbackground : MonoBehaviour {
 
     private BoxCollider2D groundCollider;
     private float groundHorizontallength;

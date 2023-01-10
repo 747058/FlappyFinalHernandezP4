@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameControl : MonoBehaviour
 {
     public static GameControl instance;                        //A reference to our game control script so we can acces it statically.
-    public Text sxoreText;                                    //A reference to the UI text component that displays the player's score.
+    public Text scoreText;                                    //A reference to the UI text component that displays the player's score.
     public GameObject gameOvertext;                          //A reference to the object that displays the text which appears when the player dies.
 
     private int score = 0;                                  //The player's score.
@@ -32,7 +32,7 @@ public class GameControl : MonoBehaviour
         if (gameOver && Input.GetMouseButton(0))
         {
             //..reload the current scene.
-            SceneManager.LoadScene(SceneManager.GetActiveScene()buildIndex);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
@@ -46,3 +46,12 @@ public class GameControl : MonoBehaviour
         //...and adjust the score text.
         scoreText.text = "Score: " + score.ToString();
     }
+
+    public void BirdDied()
+    {
+        //Active the game over text.
+        gameOvertext.SetActive(true);
+        //Set the game to be over.
+        gameOver = true;
+    }
+}
